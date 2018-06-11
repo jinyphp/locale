@@ -1,10 +1,30 @@
 <?php
 namespace Jiny\Locale;
 
-class Culture
+trait Culture
 {
-    public function __construct()
+    private $_culture = [];
+    
+    private function initCulture()
     {
-        echo __CLASS__."를 생성합니다.<br>";
+        // 문화 데이터를 초기화 합니다. 
+        $datafile = "../vendor/jiny/locale/data/culture.php";
+        $this->_cultures = include $datafile;
+    }  
+
+    public function isCulture($code)
+    {
+        echo __METHOD__."<br>";
+        if( empty($this->_cultures) ){
+            $this->initCulture();
+        }
+
+        if($this->_cultures[ $code ]){
+            return $code;
+        }
+
+        return NULL;
     }
+
+
 }
