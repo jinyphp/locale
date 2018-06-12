@@ -9,7 +9,7 @@ class Locale
 
     public function __construct($app)
     {
-        echo __CLASS__."를 생성합니다.<br>";
+        //echo __CLASS__."를 생성합니다.<br>";
         $this->Application = $app;
 
     }

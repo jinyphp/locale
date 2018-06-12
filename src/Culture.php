@@ -14,7 +14,7 @@ trait Culture
 
     public function isCulture($code)
     {
-        echo __METHOD__."<br>";
+        //echo __METHOD__."<br>";
         if( empty($this->_cultures) ){
             $this->initCulture();
         }

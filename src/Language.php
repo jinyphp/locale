@@ -14,7 +14,11 @@ trait Language
 
     public function isLanguage($code)
     {
-        echo __METHOD__."<br>";
+        //echo __METHOD__."<br>";
+        
+        // 소문자로 변경후, 코드를 매칭합니다.
+        $code = strtolower($code); 
+
         if( empty($this->_languages) ){
             $this->initLanguage();
         }

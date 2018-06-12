@@ -7,14 +7,20 @@ trait Country
 
     private function initCountry()
     {
+        //echo __METHOD__."<br>";
+
         // 국가 데이터를 초기화 합니다. 
         $datafile = "../vendor/jiny/locale/data/country.php";
-        $this->_country = include $datafile;
+        $this->_countrys = include $datafile;
     }
 
     public function isCountry($code)
     {
-        echo __METHOD__."<br>";
+        //echo __METHOD__."<br>";
+        
+        // 대문자로 변경후, 코드를 매칭합니다.
+        $code = strtoupper($code);      
+
         if( empty($this->_countrys) ){
             $this->initCountry();
         }
