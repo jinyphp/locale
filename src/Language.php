@@ -8,7 +8,7 @@ trait Language
     private function initLanguage()
     {
         // 언어 데이터를 초기화 합니다. 
-        $datafile = "../vendor/jiny/locale/data/language.php";
+        $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."language.php";
         $this->_languages = include $datafile;
     }
 

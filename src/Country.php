@@ -10,7 +10,7 @@ trait Country
         //echo __METHOD__."<br>";
 
         // 국가 데이터를 초기화 합니다. 
-        $datafile = "../vendor/jiny/locale/data/country.php";
+        $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."country.php";
         $this->_countrys = include $datafile;
     }
 

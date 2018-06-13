@@ -8,7 +8,7 @@ trait Culture
     private function initCulture()
     {
         // 문화 데이터를 초기화 합니다. 
-        $datafile = "../vendor/jiny/locale/data/culture.php";
+        $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."culture.php";
         $this->_cultures = include $datafile;
     }  
 
