@@ -7,6 +7,7 @@ trait Language
 
     private function initLanguage()
     {
+        // \TimeLog::set(__METHOD__);
         // 언어 데이터를 초기화 합니다. 
         $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."language.php";
         $this->_languages = include $datafile;
@@ -14,7 +15,7 @@ trait Language
 
     public function isLanguage($code)
     {
-        //echo __METHOD__."<br>";
+        // \TimeLog::set(__METHOD__);
         
         // 소문자로 변경후, 코드를 매칭합니다.
         $code = strtolower($code); 
@@ -23,7 +24,7 @@ trait Language
             $this->initLanguage();
         }
 
-        if($this->_languages[ $code ]){
+        if (isset($this->_languages[ $code ])) {
             return $code;
         }
 
@@ -35,6 +36,7 @@ trait Language
      */
     public function setAppLanguage($code)
     {
+        // \TimeLog::set(__METHOD__);
         if ($this->Application) {
             $this->Application->_Language = $code;                      
         } else {
@@ -45,6 +47,7 @@ trait Language
 
     public function getLanguages()
     {
+        // \TimeLog::set(__METHOD__);
         return $this->_languages;
     }
 
