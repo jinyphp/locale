@@ -5,6 +5,10 @@ trait Language
 {
     private $_languages = [];
 
+    /**
+     * 언어 데이터를 초기화 합니다.
+     * 데이터 파일을 읽어 배열화 합니다.
+     */
     private function initLanguage()
     {
         // \TimeLog::set(__METHOD__);
@@ -24,11 +28,23 @@ trait Language
             $this->initLanguage();
         }
 
+        // 배열값이 있는 경우
         if (isset($this->_languages[ $code ])) {
             return $code;
         }
 
         return NULL;
+    }
+
+    public function setLanguage($code)
+    {
+        \TimeLog::set("language...".$code); 
+        $this->_language = $code;
+    }
+
+    public function getLanguage()
+    {
+        return $this->_language;
     }
 
     /**
@@ -37,19 +53,20 @@ trait Language
     public function setAppLanguage($code)
     {
         // \TimeLog::set(__METHOD__);
-        if ($this->Application) {
-            $this->Application->_Language = $code;                      
-        } else {
-            //
-            echo "Err] Application 인스턴스가 없습니다.<br>";
-        }
+        if ($this->App) $this->App->_Language = $code;                      
+        return $this;
     }
 
+    /**
+     * 언어 목록을 반환합니다.
+     */
     public function getLanguages()
     {
         // \TimeLog::set(__METHOD__);
         return $this->_languages;
     }
 
-
+    /**
+     * 
+     */
 }

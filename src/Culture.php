@@ -3,8 +3,12 @@ namespace Jiny\Locale;
 
 trait Culture
 {
-    private $_culture = [];
+    private $_cultures = [];
     
+    /**
+     * 문화 데이터를 초기화 합니다.
+     * 데이터 파일을 읽어 배열화 합니다.
+     */
     private function initCulture()
     {
         // \TimeLog::set(__METHOD__);
@@ -27,5 +31,28 @@ trait Culture
         return NULL;
     }
 
+    public function setCulture($code)
+    {
+        \TimeLog::set("culture...".$code); 
+        $this->_culture = $code;
+    }
 
+    public function getCulture()
+    {
+        return $this->_culture;
+    }
+
+
+    /**
+     * 문화 목록을 반환합니다.
+     */
+    public function getCultures()
+    {
+        // \TimeLog::set(__METHOD__);
+        return $this->_cultures;
+    }
+
+    /**
+     * 
+     */
 }
