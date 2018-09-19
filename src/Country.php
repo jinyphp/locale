@@ -11,7 +11,6 @@ trait Country
      */
     private function initCountry()
     {
-        // \TimeLog::set(__METHOD__);
         $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."country.php";
         $this->_countrys = include $datafile;
         return $this;
@@ -21,8 +20,7 @@ trait Country
      * 국가 코드를 확인합니다.
      */
     public function isCountry($code)
-    {
-        // \TimeLog::set(__METHOD__);        
+    {      
         // 대문자로 변경후, 코드를 매칭합니다.
         $code = strtoupper($code);      
 
@@ -38,25 +36,20 @@ trait Country
         return NULL;
     }
 
+    /**
+     * 국가를 설정합니다.
+     */
     public function setCountry($code)
     {
-        \TimeLog::set("country...".$code);
         $this->_country = $code;
     }
 
+    /**
+     * 국가를 읽어옵니다.
+     */
     public function getCountry()
     {
         return $this->_country;
-    }
-
-    /**
-     * Application의 _Country를 설정합니다.
-     */
-    public function setAppCountry($code)
-    {
-        // \TimeLog::set(__METHOD__);
-        if ($this->App) $this->App->_Country = $code;                      
-        return $this;
     }
 
     /**
@@ -64,7 +57,6 @@ trait Country
      */
     public function getCountries()
     {
-        // \TimeLog::set(__METHOD__);
         return $this->_countrys;
     }
 
