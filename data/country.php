@@ -1,4 +1,13 @@
 <?php
+/*
+ * This file is part of the jinyPHP package.
+ *
+ * (c) hojinlee <infohojin@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Jiny\Locale;
 /**
  * 국가 목록을 출력합니다.
  */
@@ -109,7 +118,7 @@ return [
     'ALA'=>[
         "code"=>"ALA",
         "en"=>"Aland Islands",
-        "ko"=>"",
+        "ko"=>"알란드 제도",
         "ja"=>""
     ],
     'AL'=>[
@@ -121,25 +130,25 @@ return [
     'GBA'=>[
         "code"=>"GBA",
         "en"=>"Alderney",
-        "ko"=>"",
+        "ko"=>"올 더니",
         "ja"=>""
     ],
     'DZ'=>[
         "code"=>"DZ",
         "en"=>"Algeria",
-        "ko"=>"",
+        "ko"=>"알제리",
         "ja"=>""
     ],
     'AS'=>[
         "code"=>"AS",
         "en"=>"American Samoa",
-        "ko"=>"",
+        "ko"=>"아메리칸 사모아",
         "ja"=>""
     ],
     'AD'=>[
         "code"=>"AD",
         "en"=>"Andorra",
-        "ko"=>"",
+        "ko"=>"안도라",
         "ja"=>""
     ],
     'AO'=>[
@@ -151,120 +160,121 @@ return [
     'AI'=>[
         "code"=>"AI",
         "en"=>"Anguilla",
-        "ko"=>"",
-        "ja"=>""],
+        "ko"=>"앵 귈라",
+        "ja"=>""
+    ],
     'AQ'=>[
         "code"=>"AQ",
         "en"=>"Antarctica",
-        "ko"=>"",
+        "ko"=>"남극 대륙",
         "ja"=>""
     ],
     'AG'=>[
         "code"=>"AG",
         "en"=>"Antigua and Barbuda",
-        "ko"=>"",
+        "ko"=>"앤티가 바부 다",
         "ja"=>""
     ],
     'AR'=>[
         "code"=>"AR",
         "en"=>"Argentina",
-        "ko"=>"",
+        "ko"=>"아르헨티나",
         "ja"=>""
     ],
     'AM'=>[
         "code"=>"AM",
         "en"=>"Armenia",
-        "ko"=>"",
+        "ko"=>"아르메니아",
         "ja"=>""
     ],
     'AW'=>[
         "code"=>"AW",
         "en"=>"Aruba",
-        "ko"=>"",
+        "ko"=>"아루바",
         "ja"=>""
     ],
     'ASC'=>[
         "code"=>"ASC",
         "en"=>"Ascension Island",
-        "ko"=>"",
+        "ko"=>"승천 섬",
         "ja"=>""
     ],
     'AU'=>[
         "code"=>"AU",
         "en"=>"Australia",
-        "ko"=>"",
+        "ko"=>"호주",
         "ja"=>""
     ],
     'AT'=>[
         "code"=>"AT",
         "en"=>"Austria",
-        "ko"=>"",
+        "ko"=>"오스트리아",
         "ja"=>""
     ],
     'AZ'=>[
         "code"=>"AZ",
         "en"=>"Azerbaijan",
-        "ko"=>"",
+        "ko"=>"아제르바이잔",
         "ja"=>""
     ],
     'BS'=>[
         "code"=>"BS",
         "en"=>"Bahamas",
-        "ko"=>"",
+        "ko"=>"바하마",
         "ja"=>""
     ],
     'BH'=>[
         "code"=>"BH",
         "en"=>"Bahrain",
-        "ko"=>"",
+        "ko"=>"바레인",
         "ja"=>""
     ],
     'BD'=>[
         "code"=>"BD",
         "en"=>"Bangladesh",
-        "ko"=>"",
+        "ko"=>"방글라데시",
         "ja"=>""
     ],
     'BB'=>[
         "code"=>"BB",
         "en"=>"Barbados",
-        "ko"=>"",
+        "ko"=>"바베이도스",
         "ja"=>""
     ],
     'BY'=>[
         "code"=>"BY",
         "en"=>"Belarus",
-        "ko"=>"",
+        "ko"=>"벨라루스",
         "ja"=>""
     ],
     'BE'=>[
         "code"=>"BE",
         "en"=>"Belgium",
-        "ko"=>"",
+        "ko"=>"벨기에",
         "ja"=>""
     ],
     'BZ'=>[
         "code"=>"BZ",
         "en"=>"Belize",
-        "ko"=>"",
+        "ko"=>"벨리즈",
         "ja"=>""
     ],
     'BJ'=>[
         "code"=>"BJ",
         "en"=>"Benin",
-        "ko"=>"",
+        "ko"=>"베냉",
         "ja"=>""
     ],
     'BM'=>[
         "code"=>"BM",
         "en"=>"Bermuda",
-        "ko"=>"",
+        "ko"=>"버뮤다",
         "ja"=>""
     ],
     'BT'=>[
         "code"=>"BT",
         "en"=>"Bhutan",
-        "ko"=>"",
+        "ko"=>"부탄",
         "ja"=>""
     ],
     'BO'=>[

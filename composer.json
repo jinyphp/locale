@@ -1,8 +1,8 @@
 {
     "name": "jiny/locale",
-    "description": "JINY Locale",
+    "description": "jinyPHP Locale",
     "keywords": [
-        "jiny",
+        "jinyPHP",
         "framwork",
         "locale"
     ],
@@ -23,6 +23,9 @@
     "autoload": {
         "psr-4": {
             "Jiny\\Locale\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/Helper.php"
+        ]
     }
 }
