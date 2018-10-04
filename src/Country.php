@@ -17,10 +17,22 @@ trait Country
      * 국가 데이터를 초기화 합니다.
      * 데이터 파일을 읽어 배열화 합니다.
      */
-    private function initCountry()
+    private function initCountry($type="json")
     {
-        $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."country.php";
-        $this->_countrys = include $datafile;
+        $path = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS;
+        if($type == "php"){
+            $datafile = $path."country.php";
+            if (file_exists($datafile)) {
+                $this->_countrys = include $datafile;
+            }            
+        } else {
+            $datafile = $path."country".DS."country.json";
+            if (file_exists($datafile)) {
+                $str = file_get_contents($datafile);
+                $this->_countrys = json_decode($str, true);
+            }
+        }        
+
         return $this;
     }
 
@@ -30,11 +42,11 @@ trait Country
     public function isCountry($code)
     {      
         // 대문자로 변경후, 코드를 매칭합니다.
-        $code = strtoupper($code);      
+        $code = strtoupper($code);   
 
         // 목록을 동적으로 로딩합니다.
         // 사용하지 않는 경우 메모리를 절약합니다.
-        if( empty($this->_countrys) ) $this->initCountry();
+        if( empty($this->_countrys) ) $this->initCountry("json");
     
         // 배열값이 있는 경우
         if (isset($this->_countrys[ $code ])) {

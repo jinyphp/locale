@@ -17,11 +17,25 @@ trait Language
      * 언어 데이터를 초기화 합니다.
      * 데이터 파일을 읽어 배열화 합니다.
      */
-    private function initLanguage()
+    private function initLanguage($type="json")
     {
-        // 언어 데이터를 초기화 합니다. 
-        $datafile = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS."language.php";
-        $this->_languages = include $datafile;
+        $path = ROOT.DS."vendor".DS."jiny".DS."locale".DS."data".DS;
+        if($type == "php"){
+            // 언어 데이터를 초기화 합니다.             
+            $datafile = $path."language.php";
+            if (file_exists($datafile)) {
+                $this->_languages = include $datafile;
+            }           
+        } else {
+            // 언어 데이터를 초기화 합니다.             
+            $datafile = $path."language".DS."language.json";
+            if (file_exists($datafile)) {
+                $str = file_get_contents($datafile);
+                $this->_languages = json_decode($str, true);
+            }
+        }
+
+        return $this;
     }
 
     /**
@@ -32,8 +46,9 @@ trait Language
         // 소문자로 변경후, 코드를 매칭합니다.
         $code = strtolower($code); 
 
+        // 언어 배열을 초기화 합니다.
         if( empty($this->_languages) ){
-            $this->initLanguage();
+            $this->initLanguage("json");
         }
 
         // 배열값이 있는 경우
