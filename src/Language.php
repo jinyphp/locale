@@ -32,6 +32,10 @@ trait Language
             if (file_exists($datafile)) {
                 $str = file_get_contents($datafile);
                 $this->_languages = json_decode($str, true);
+            } else {
+                echo "언어 리소스 파일이 없습니다. <br>";
+                echo $datafile;
+                exit;
             }
         }
 
@@ -54,6 +58,8 @@ trait Language
         // 배열값이 있는 경우
         if (isset($this->_languages[ $code ])) {
             return $code;
+        } else {
+            // echo "언어를 찾지 못했습니다.";
         }
 
         return NULL;
