@@ -60,6 +60,19 @@ class Locale
         return NULL;
     }
 
+    public function check($code)
+    {
+        if ( $this->isCountry($code) ) {
+            $this->setCountry($code);
+            return "country";
+        } else if ( $this->isLanguage($code) ) {
+            $this->setLanguage($code);
+            return "language";
+        }
+
+        return false;
+    }
+
     /**
      * 
      */
