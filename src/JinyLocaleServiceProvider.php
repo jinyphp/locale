@@ -16,14 +16,23 @@ class JinyLocaleServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', $this->package);
 
         // 데이터베이스
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
+        //$this->loadSeedersFrom(__DIR__.'/../Database/Seeders');
+
+        // Publish your package's configuration file to Laravel's config path
+        $this->publishes([
+            __DIR__.'/../config/country.php' => config_path('locale/country.php'),
+            __DIR__.'/../config/language.php' => config_path('locale/language.php'),
+        ]);
 
     }
 
     public function register()
     {
 
-
+        // Merge your package's configuration with the existing configuration
+        $this->mergeConfigFrom(__DIR__.'/../config/country.php', 'locale.country');
+        $this->mergeConfigFrom(__DIR__.'/../config/language.php', 'locale.language');
     }
 
 }

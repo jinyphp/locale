@@ -20,7 +20,7 @@ class CreateLanguageTable extends Migration
             $table->string('enable')->default(1);
 
             $table->string('code');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('flag')->nullable();
 
 
