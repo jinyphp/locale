@@ -2,9 +2,8 @@
     "name": "jiny/locale",
     "description": "jinyPHP Locale",
     "keywords": [
-        "jinyPHP",
-        "framwork",
-        "locale"
+        "jiny", "jinyphp", "jinyerp",
+        "framwork", "laravel", "locale"
     ],
     "homepage": "http://www.jinyphp.com",
     "type": "library",
@@ -18,7 +17,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">= 7.0"
+        "php": "^7.3|^8.0",
+        "livewire/livewire": "^2.7"
     },
     "autoload": {
         "psr-4": {
@@ -28,9 +28,16 @@
             "src/Helpers/Helper.php"
         ]
     },
-    "scripts": {
-        "post-package-install": [
-            "Jiny\\Locale\\Setup::postPackageInstall"
-        ]
+    "autoload-dev": {
+        "psr-4": {
+            "Jiny\\Locale\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jiny\\Locale\\JinyLocaleServiceProvider"
+            ]
+        }
     }
 }
