@@ -1,9 +1,10 @@
 <?php
-namespace Jiny\Locale\Database\Seeders;
+namespace Jiny\Locale\Database\Seeds;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class LocaleCountry extends Seeder
+class Language extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,11 +13,11 @@ class LocaleCountry extends Seeder
      */
     public function run()
     {
-        $this->outputMessage("Seeding started...");
+        $this->outputMessage("Language Seeding started...");
 
         // Your seeding logic here
 
-        $this->outputMessage("Seeding completed.");
+        //$this->outputMessage("Seeding completed.");
     }
 
     private function outputMessage($message)

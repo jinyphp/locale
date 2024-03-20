@@ -22,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Jiny\\Locale\\": "src/"
+            "Jiny\\Locale\\": "src/",
+            "Jiny\\Locale\\Database\\Seeds": "database/seeds/"
         },
         "files": [
             "src/Helpers/Helper.php"

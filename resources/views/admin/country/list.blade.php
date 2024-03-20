@@ -15,7 +15,7 @@
                 <th width="100">code</th>
 
                 <th>이름</th>
-
+                <th>en</th>
                 <th width="200">등록 일자</th>
             </tr>
         </thead>
@@ -39,12 +39,15 @@
                 <td width="100">{{$item->code}}</td>
 
                 <td>
-                    <div>{!! $popupEdit($item, $item->name) !!}</div>
+                    {!! $popupEdit($item, $item->name) !!}
+                </td>
+
+                <td>
+                    {!! $popupEdit($item, $item->en) !!}
                 </td>
 
                 <td width="200">
                     <div class="text-gray-600">{{$item->created_at}} ~</div>
-                    <div>{{$item->expire}}</div>
                 </td>
             </tr>
             @endforeach

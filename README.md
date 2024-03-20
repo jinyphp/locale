@@ -20,3 +20,13 @@ https://github.com/jinyphp/locale
 ## 로케일값
 로케일(local)은 언어나 국가등 지역등을 지정하는 상수값들을 말합니다.
 다양한 언어의 코드와 고유적인 표현을 제공합니다. 또한 국가의 목록 및 언어 표현을 같이 제공합니다.
+
+
+## 데이터베이스 마이그레이션 및 Seeds
+
+seed 파일을 배포합니다.
+```
+php artisan vendor:publish --tag=locale-seeds
+
+php artisan db:seed --class=Language
+```
