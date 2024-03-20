@@ -31,6 +31,12 @@ class JinyLocaleServiceProvider extends ServiceProvider
         ], 'locale-seeds');
         */
 
+        // 공유값
+        $this->app->bind('seed_locale_to_run', function () {
+            // Return the seed class name you want to run
+            return \Jiny\Locale\Database\Seeds\Language::class;
+        });
+
     }
 
     public function register()
