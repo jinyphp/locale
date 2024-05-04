@@ -1,9 +1,14 @@
 <?php
-/*
- * This file is part of the jinyPHP package.
- *
- * (c) hojinlee <infohojin@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+
+if(!function_exists("country")) {
+    function xSelectCountry($name=null,$value=null) {
+        $select = new \Jiny\Html\Form\CSelect($name, $value);
+        $select->setValue($value);
+
+        foreach(config("locale.country") as $key => $item) {
+            $select->addOption($item['en'], $key);
+        }
+        return $select;
+    }
+}
+

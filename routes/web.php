@@ -18,10 +18,11 @@ Route::middleware(['web','auth:sanctum', 'verified', 'admin'])
     Route::resource('/language',\Jiny\Locale\Http\Controllers\AdminLanguageController::class);
 });
 
+
 // 국기 이미지 출력
 Route::middleware(['web'])
 ->prefix('images')->group(function() {
-    Route::get('flag/{code}', [
+    Route::get('flags/{code}', [
         \Jiny\Locale\Http\Controllers\FlagImage::class,
-        'index'])->where('code', '[a-z]+');
+        'index'])->where('code', '[a-z]+\.(png|jpg|jpeg|gif)');
 });

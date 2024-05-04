@@ -30,3 +30,10 @@ php artisan vendor:publish --tag=locale-seeds
 
 php artisan db:seed --class=Language
 ```
+
+
+## 국기 이미지 배포
+
+```
+php artisan vendor:publish --tag=public
+```
