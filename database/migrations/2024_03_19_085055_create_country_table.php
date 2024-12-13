@@ -23,10 +23,17 @@ class CreateCountryTable extends Migration
             $table->string('name')->nullable();
             $table->string('flag')->nullable();
 
-            $table->string('ko')->nullable();
-            $table->string('en')->nullable();
+            $table->string('latitude')->nullable(); // 위도
+            $table->string('longitude')->nullable(); // 경도
 
+            $table->string('lang')->nullable();
 
+            $table->string('users')->nullable();
+            $table->string('users_percent')->nullable();
+
+            $table->text('description')->nullable();
+
+            $table->string('manager')->nullable();
         });
     }
 

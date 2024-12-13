@@ -14,8 +14,29 @@ if(function_exists('admin_prefix')) {
 Route::middleware(['web','auth:sanctum', 'verified', 'admin'])
 ->name('admin.locale')
 ->prefix($prefix.'/locale')->group(function () {
-    Route::resource('/country',\Jiny\Locale\Http\Controllers\AdminCountryController::class);
-    Route::resource('/language',\Jiny\Locale\Http\Controllers\AdminLanguageController::class);
+
+    Route::get('/',[
+        \Jiny\Locale\Http\Controllers\AdminLocale::class,
+        'index'
+    ]);
+
+    Route::resource('/country',
+        \Jiny\Locale\Http\Controllers\Admin\AdminCountry::class);
+
+    Route::get('/language',[
+        \Jiny\Locale\Http\Controllers\Admin\AdminLanguage::class,
+        'index'
+    ]);
+
+    Route::get('/currency',[
+        \Jiny\Locale\Http\Controllers\Admin\AdminCurrency::class,
+        'index'
+    ]);
+
+    Route::get('/currency/log/{id?}',[
+        \Jiny\Locale\Http\Controllers\Admin\AdminCurrencyLog::class,
+        'index'
+    ])->where('id', '[0-9]+');
 });
 
 

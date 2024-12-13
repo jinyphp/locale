@@ -1,10 +1,9 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLanguageTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +12,19 @@ class CreateLanguageTable extends Migration
      */
     public function up()
     {
-        Schema::create('language', function (Blueprint $table) {
+        Schema::create('currency', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
 
-            $table->string('enable')->default(1);
-
-            $table->string('code');
+            $table->string('enable')->nullable();
             $table->string('name')->nullable();
-            $table->string('flag')->nullable();
 
-            // 단일국가 언어
+            $table->string('unit')->nullable();
+            $table->string('rate')->nullable();
+
             $table->string('country')->nullable();
 
-            $table->string('users')->nullable();
-            $table->string('users_percent')->nullable();
+            $table->text('description')->nullable();
         });
     }
 
@@ -38,6 +35,6 @@ class CreateLanguageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('language');
+        Schema::dropIfExists('currency');
     }
-}
+};

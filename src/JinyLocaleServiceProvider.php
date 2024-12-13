@@ -8,7 +8,7 @@ use Livewire\Livewire;
 
 class JinyLocaleServiceProvider extends ServiceProvider
 {
-    private $package = "locale";
+    private $package = "jiny-locale";
     public function boot()
     {
         // 모듈: 라우트 설정
@@ -25,12 +25,11 @@ class JinyLocaleServiceProvider extends ServiceProvider
 
 
         // Publish your package's configuration file to Laravel's config path
-        /*
-        $this->publishes([
-            __DIR__.'/../config/country.php' => config_path('locale/country.php'),
-            __DIR__.'/../config/language.php' => config_path('locale/language.php'),
-        ]);
-        */
+        // $this->publishes([
+        //     __DIR__.'/../config/country.php' => config_path('country.php'),
+        //     __DIR__.'/../config/language.php' => config_path('language.php'),
+        // ]);
+
 
 
         /*
@@ -40,18 +39,18 @@ class JinyLocaleServiceProvider extends ServiceProvider
         */
 
         // 공유값
-        $this->app->bind('seed_locale_to_run', function () {
-            // Return the seed class name you want to run
-            return \Jiny\Locale\Database\Seeds\Language::class;
-        });
+        // $this->app->bind('seed_locale_to_run', function () {
+        //     // Return the seed class name you want to run
+        //     return \Jiny\Locale\Database\Seeds\Language::class;
+        // });
 
     }
 
     public function register()
     {
         // 패키지의 설정 파일을 병합
-        $this->mergeConfigFrom(__DIR__.'/../config/country.php', 'locale.country');
-        $this->mergeConfigFrom(__DIR__.'/../config/language.php', 'locale.language');
+        $this->mergeConfigFrom(__DIR__.'/../config/country.php', 'country');
+        $this->mergeConfigFrom(__DIR__.'/../config/language.php', 'language');
     }
 
 }
